@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import MensajeValidacion from './MensajeValidacion'
 
-const Formulario = ({paciente}) => 
+const Formulario = ({vehiculo}) => 
 {
 
   const navigate = useNavigate()
@@ -11,12 +11,12 @@ const Formulario = ({paciente}) =>
   const [error, setError] = useState(false)
 
   const [form, setForm] = useState({
-      nombre:     paciente?.nombre ?? "",
-      propietario:paciente?.propietario ??"",
-      email:      paciente?.email ?? "",
-      fecha:      paciente?.fecha ??"",
-      telefono:   paciente?.telefono ??"",
-      sintomas:   paciente?.sintomas ??""
+      marca:     vehiculo?.marca ?? "",
+      propietario:vehiculo?.propietario ??"",
+      email:      vehiculo?.email ?? "",
+      fecha:      vehiculo?.fecha ??"",
+      telefono:   vehiculo?.telefono ??"",
+      reparaciones:   vehiculo?.reparaciones ??""
   })
 
   const handleChange = (e) =>
@@ -40,29 +40,29 @@ const Formulario = ({paciente}) =>
         return
       }
 
-      if(paciente?.id)
+      if(vehiculo?.id)
       {
-        const url = `http://localhost:4000/pacientes/${paciente.id}`
+        const url = `http://localhost:4000/vehiculos/${vehiculo.id}`
         const peticion = await fetch(url,{
             method:'PUT',
             body:JSON.stringify(form),
             headers:{'Content-Type':'application/json'}
         })
         const respuesta = await peticion.json()
-        navigate('/pacientes')
+        navigate('/vehiculos')
       }
       else
       {
         try {
           
-          const url = "http://localhost:4000/pacientes"
+          const url = "http://localhost:4000/vehiculos"
           const peticion = await fetch(url,{
               method:'POST',
               body:JSON.stringify(form),
               headers:{'Content-Type':'application/json'}
           })
           const respuesta = await peticion.json()
-          navigate('/pacientes')
+          navigate('/vehiculos')
   
         } catch (error) {
           console.log(error);
@@ -76,7 +76,7 @@ const Formulario = ({paciente}) =>
     <div className='bg-white mt-10 px-5 py-10 rounded-lg shadow-lg md:w-3/4 mx-auto'>
         
     <h1 className='text-gray-800 font-bold uppercase text-center text-xl mb-4'>
-      {paciente?.id ? <p>Actualizar paciente</p> : <p>Registrar paciente</p>}
+      {vehiculo?.id ? <p>Actualizar vehiculo</p> : <p>Registrar vehiculo</p>}
     </h1>
 
     {
@@ -86,15 +86,15 @@ const Formulario = ({paciente}) =>
     <form onSubmit={handleSubmit}>
         <div>
           <label 
-          htmlFor='nombre'
-          className='text-gray-700 uppercase font-bold'>Nombre de la mascota: </label>
+          htmlFor='marca'
+          className='text-gray-700 uppercase font-bold'>Marca del Vehiculo: </label>
           <input 
-          id='nombre'
+          id='marca'
           type="text" 
           className='border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5'
-          placeholder='nombre de la mascota'
-          name='nombre'
-          value={form.nombre}
+          placeholder='marca del vehiculo'
+          name='marca'
+          value={form.marca}
           onChange={handleChange}
           />
         </div>
@@ -107,7 +107,7 @@ const Formulario = ({paciente}) =>
           id='propietario'
           type="text" 
           className='border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5'
-          placeholder='nombre de la mascota'
+          placeholder='marca del vehiculo'
           name='propietario'
           value={form.propietario}
           onChange={handleChange}
@@ -158,23 +158,23 @@ const Formulario = ({paciente}) =>
 
         <div>
           <label 
-          htmlFor='sintomas'
-          className='text-gray-700 uppercase font-bold'>Sintomas: </label>
+          htmlFor='reparaciones'
+          className='text-gray-700 uppercase font-bold'>Reparaciones: </label>
           <textarea 
           className='border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5'
-          placeholder='Describe los sintomas'  
-          name='sintomas'
-          value={form.sintomas}
+          placeholder='Describe los reparaciones'  
+          name='reparaciones'
+          value={form.reparaciones}
           onChange={handleChange}/>
         </div>
 
         <input 
-        id='sintomas'
+        id='reparaciones'
         type="submit"
         className='bg-sky-800 w-full p-3 
         text-white uppercase font-bold rounded-lg 
         hover:bg-sky-900 cursor-pointer transition-all'
-        value={paciente?.id ? 'Actualizar paciente' : 'Registrar paciente'} 
+        value={vehiculo?.id ? 'Actualizar vehiculo' : 'Registrar vehiculo'} 
         />
 
       </form>

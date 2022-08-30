@@ -3,10 +3,10 @@ import Dashboard from "./layout/Dashboard";
 import Login from "./layout/Login";
 import FormularioLogin from "./pages/FormularioLogin";
 import LandingPage from "./pages/LandingPage";
-import ListarPacientes from "./pages/ListarPacientes";
-import MostrarPacientes from "./pages/MostrarPacientes";
-import NuevoPaciente from "./pages/NuevoPasiente";
-import ActualizarPaciente from "./pages/ActualizarPaciente";
+import ListarVehiculo from "./pages/ListarVehiculo";
+import MostrarVehiculo from "./pages/MostrarVehiculo";
+import NuevoVehiculo from "./pages/NuevoVehiculo";
+import ActualizarVehiculo from "./pages/ActualizarVehiculo";
 
 function App() {
   return (
@@ -20,11 +20,11 @@ function App() {
           <Route index element={<FormularioLogin/>}/>
         </Route>
 
-        <Route path="/pacientes" element={<Dashboard />}>
-          <Route index element={<ListarPacientes/>}/>
-          <Route path="detalle/:id" element={<MostrarPacientes/>} />
-          <Route path="nuevo" element={<NuevoPaciente />} />
-          <Route path="editar/:id" element={<ActualizarPaciente/>} />
+        <Route path="/vehiculos" element={<Dashboard />}>
+          <Route index element={<ListarVehiculo/>}/>
+          <Route path="detalle/:id" element={<MostrarVehiculo/>} />
+          <Route path="nuevo" element={<NuevoVehiculo />} />
+          <Route path="editar/:id" element={<ActualizarVehiculo/>} />
         </Route>
 
       </Routes>

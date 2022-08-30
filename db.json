@@ -16,33 +16,42 @@
   "profile": {
     "name": "typicode"
   },
-  "pacientes": [
+  "vehiculos": [
     {
-      "nombre": "Pecas",
+      "marca": "BMW",
       "propietario": "Juan Peréz",
       "email": "juan@hotmail.com",
-      "fecha": "20-03-2022",
+      "fecha": "2022-08-29",
       "telefono": "0995644186",
-      "sintomas": "Dolor de orejas",
+      "reparaciones": "Cambio de faros",
       "id": 2
     },
     {
-      "id": 3,
-      "nombre": "Pongo",
+      "marca": "Tesla",
       "propietario": "Miguel Muzo",
       "email": "miguel_muzo@hotmail.com",
+      "fecha": "2022-08-29",
       "telefono": "099763190",
-      "fecha": "27-08-2022",
-      "sintomas": "Dolor de manito"
+      "reparaciones": "Cambio de sistema de ventilacion",
+      "id": 3
     },
     {
-      "nombre": "Pancho",
+      "marca": "mazda",
       "propietario": "Camila Rinoso",
       "email": "camila@reionso.com",
       "fecha": "2022-08-27",
       "telefono": "+593999768132",
-      "sintomas": "Dolor de estomago",
+      "reparaciones": "Reparacion de valvula",
       "id": 4
+    },
+    {
+      "marca": "ferrari",
+      "propietario": "Camila Rinoso",
+      "email": "camila@reionso.com",
+      "fecha": "2022-08-29",
+      "telefono": "+593999768132",
+      "reparaciones": "Daño del calibre",
+      "id": 5
     }
   ]
 }

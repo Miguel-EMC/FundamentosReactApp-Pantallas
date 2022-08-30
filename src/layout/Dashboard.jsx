@@ -9,11 +9,11 @@ const Dashboard = () => {
     <div className="md:flex md:min-h-screen">
       <div className="md:w-1/4 bg-sky-900 px-5 py-10">
         <h2 className="text-4xl font-black text-center text-white underline">
-          APPVET
+          Pinanjota's Mecanica
         </h2>
 
         <img
-          src="https://cdn-icons-png.flaticon.com/512/2138/2138508.png"
+          src="https://i.ibb.co/YN3QVd6/Kevincita.png"
           alt="img-client"
           className="m-auto mt-4"
           width={120}
@@ -23,26 +23,26 @@ const Dashboard = () => {
         <ul className="mt-5 list-disc list-outside px-5">
           <li className="text-orange-900">
             <Link
-              to="/pacientes"
+              to="/vehiculos"
               className={`${
-                urlActual === "/pacientes"
+                urlActual === "/vehiculos"
                   ? "text-blue-300 underline"
                   : "text-white"
               } text-2xl block mt-2 hover:text-blue-200`}
             >
-              Pacientes
+              Vehiculos
             </Link>
           </li>
           <li className="text-orange-900">
             <Link
-              to="/pacientes/nuevo"
+              to="/vehiculos/nuevo"
               className={`${
-                urlActual === "/pacientes/nuevo"
+                urlActual === "/vehiculos/nuevo"
                   ? "text-blue-300 underline"
                   : "text-white"
               } text-2xl block mt-2 hover:text-blue-200`}
             >
-              Nuevo Paciente
+              Nuevo Vehiculo
             </Link>
           </li>
           <Link
