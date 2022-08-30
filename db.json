@@ -1,0 +1,48 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "pacientes": [
+    {
+      "nombre": "Pecas",
+      "propietario": "Juan Peréz",
+      "email": "juan@hotmail.com",
+      "fecha": "20-03-2022",
+      "telefono": "0995644186",
+      "sintomas": "Dolor de orejas",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "nombre": "Pongo",
+      "propietario": "Miguel Muzo",
+      "email": "miguel_muzo@hotmail.com",
+      "telefono": "099763190",
+      "fecha": "27-08-2022",
+      "sintomas": "Dolor de manito"
+    },
+    {
+      "nombre": "Pancho",
+      "propietario": "Camila Rinoso",
+      "email": "camila@reionso.com",
+      "fecha": "2022-08-27",
+      "telefono": "+593999768132",
+      "sintomas": "Dolor de estomago",
+      "id": 4
+    }
+  ]
+}
